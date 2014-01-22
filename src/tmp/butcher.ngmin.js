@@ -112,6 +112,17 @@
       $scope.getMeat();
     }
   ]);
+}(window.angular, window.jQuery));(function (angular, $) {
+  'use strict';
+  angular.module('butcher').controller('NavButtonsCtrl', [
+    '$scope',
+    '$routeParams',
+    '$log',
+    function ($scope, $routeParams, $log) {
+      $log.log('NavButtonsCtrl is running.');
+      $scope.$routeParams = $routeParams;
+    }
+  ]);
 }(window.angular, window.jQuery));(function (angular, document) {
   'use strict';
   angular.module('butcher').factory('intercept', [

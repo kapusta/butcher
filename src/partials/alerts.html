@@ -1,16 +1,16 @@
 <span ng-controller="AlertsCtrl">
   <alert style="margin: 15px 0px 0px 0px;" ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">
-      <span class="field_name" style="padding: 0px 0px 2px 0px; margin: 0px;">Message</span>
-      <span class="field_value" style="padding: 0px 0px 2px 0px; margin: 0px;">
-        <span ng-repeat="(k,v) in alert.msg">{{k}}: {{v}}</span>
-      </span>
-      <br>
-      <span class="field_name" style="padding: 0px 0px 0px 0px; margin: 0px;">Target</span>
-      <span class="field_value" style="padding: 0px 0px 0px 0px; margin: 0px;">{{alert.url}}</span>
-      <br>
-      <span class="field_name" style="padding: 2px 0px 0px 0px; margin: 0px;">Code</span>
-      <span class="field_value" style="padding: 2px 0px 0px 0px; margin: 0px;">
-        {{alert.status}}<span ng-if="alert.count > 0">, occurred {{alert.count}} time(s)</span>.
-      </span>
+    <span class="field_name" style="padding: 0px 0px 2px 0px; margin: 0px;">Message</span>
+    <span class="field_value" style="padding: 0px 0px 2px 0px; margin: 0px;">
+      <span ng-repeat="(k,v) in alert.msg">{{k}}: {{v}}</span>
+    </span>
+    <br>
+    <span class="field_name" style="padding: 0px 0px 0px 0px; margin: 0px;">Target</span>
+    <span class="field_value" style="padding: 0px 0px 0px 0px; margin: 0px;">{{alert.url}}</span>
+    <br>
+    <span class="field_name" style="padding: 2px 0px 0px 0px; margin: 0px;">Code</span>
+    <span class="field_value" style="padding: 2px 0px 0px 0px; margin: 0px;">
+      {{alert.status}}<span ng-if="alert.count > 0">, occurred {{alert.count}} time(s)</span>.
+    </span>
   </alert>
 </span>
