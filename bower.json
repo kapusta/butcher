@@ -1,0 +1,6 @@
+{
+  "name": "butcher",
+  "version": "0.0.1",
+  "main": ["dist"],
+  "ignore": ["build","src",".gitignore","bower.json","json"]
+}
