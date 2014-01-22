@@ -10,7 +10,7 @@
     return this.charAt(0).toUpperCase() + this.slice(1);
   };
   
-  var butcher = angular.module('butcher', ['ngRoute', 'ui.bootstrap']);
+  var butcher = angular.module('butcher', ['ngRoute', 'ui.bootstrap', 'dkCircles']);
   
   // Configure the module.
   butcher.config(function($routeProvider, $locationProvider, $httpProvider) {

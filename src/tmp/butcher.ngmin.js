@@ -7,7 +7,8 @@
   };
   var butcher = angular.module('butcher', [
       'ngRoute',
-      'ui.bootstrap'
+      'ui.bootstrap',
+      'dkCircles'
     ]);
   butcher.config([
     '$routeProvider',
@@ -121,6 +122,20 @@
     function ($scope, $routeParams, $log) {
       $log.log('NavButtonsCtrl is running.');
       $scope.$routeParams = $routeParams;
+    }
+  ]);
+}(window.angular, window.jQuery));(function (angular, $) {
+  'use strict';
+  angular.module('butcher').controller('ParticipationStatsCtrl', [
+    '$scope',
+    '$routeParams',
+    '$log',
+    function ($scope, $routeParams, $log) {
+      $log.log('ParticipationStatsCtrl is running.');
+      $scope.int = {};
+      $scope.int.posters = 82;
+      $scope.int.lurkers = 147;
+      $scope.int.pRate = ($scope.int.posters / ($scope.int.posters + $scope.int.lurkers) * 100).toFixed(1);
     }
   ]);
 }(window.angular, window.jQuery));(function (angular, document) {
