@@ -23,6 +23,22 @@ GETs meatdata and gives it to you in a consumable format.
 * Trim the download size when it's all 200s
 * Graph some stuff
 
+### nginx vs apache
+
+There's an .htaccess file in there to help with urls/routes, if you're using nginx, use this instead...
+
+		server {
+			listen       8000;
+			server_name  novabro;
+			location / {
+				root   /home/novabro/butcher/dist;
+				index  index.html index.htm;
+				if (!-e $request_filename){
+					rewrite ^(.*)$ /index.html;
+				}
+			}
+		}
+
 ### License
 
 Apache Version 2
