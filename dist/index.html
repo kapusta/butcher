@@ -21,17 +21,14 @@
   
   <script src="/js/ui-bootstrap-tpls.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="/js/jquery.peity.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/dk-circles.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="/js/butcher.min.js"></script>
   
 </head>
 <body>
   <div class="container" style="padding: 5px 20px 0px 20px;">
     
-    <div class="row" ng-controller="NavButtonsCtrl">
-      <a type="button" class="btn" ng-class="(!$routeParams.page) ? 'btn-primary' : ''" href="/" bs-button><i class="fa fa-home"></i> traffic</a>
-      <a type="button" class="btn" ng-class="($routeParams.page == 'about') ? 'btn-primary' : ''" href="/about" bs-button><i class="fa fa-info-circle"></i> about</a>
-    </div><!-- end row -->
-    <br>
+    <span ng-include="'/partials/nav-buttons.html'"></span>
     
     <div ng-view class="row">
     </div>
