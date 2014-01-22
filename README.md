@@ -27,17 +27,17 @@ GETs meatdata and gives it to you in a consumable format.
 
 There's an .htaccess file in there to help with urls/routes, if you're using nginx, use this instead...
 
-		server {
-			listen       8000;
-			server_name  novabro;
-			location / {
-				root   /home/novabro/butcher/dist;
-				index  index.html index.htm;
-				if (!-e $request_filename){
-					rewrite ^(.*)$ /index.html;
-				}
-			}
-		}
+    server {
+      listen       8000;
+      server_name  novabro;
+      location / {
+        root   /home/novabro/butcher/dist;
+        index  index.html index.htm;
+        if (!-e $request_filename){
+          rewrite ^(.*)$ /index.html;
+        }
+      }
+    }
 
 ### License
 
@@ -45,4 +45,5 @@ Apache Version 2
 
 ### Changelog
 
+* 0.0.2 White space clean up, added NavButtonsCtrl
 * 0.0.1 First release. This is just barely a thing.
