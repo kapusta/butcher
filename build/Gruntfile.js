@@ -59,13 +59,13 @@ module.exports = function (grunt) {
         dest: '../src/tmp/butcher.ngmin.js'
       }
     },
-
+    
     copy: {
       partials: {
         files: [
           { // don't need to copy index.html
-            expand: true, 
-            cwd: "../src/partials", 
+            expand: true,
+            cwd: "../src/partials",
             src: ['**'], 
             dest: '../dist/partials/',
             filter: 'isFile'
@@ -79,14 +79,15 @@ module.exports = function (grunt) {
             flatten: true,
             src: [
               '../src/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-							'../src/bower_components/peity/jquery.peity.min.js'
+              '../src/bower_components/peity/jquery.peity.min.js',
+              '../src/bower_components/dkCircles/dk-circles.min.js'
             ],
             dest: '../dist/js/',
             filter: 'isFile'
           }
         ]
       },
-
+      
     },
     
     watch: {
