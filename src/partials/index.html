@@ -1,0 +1,23 @@
+<div ng-controller="CoreStatsCtrl">
+	<div class="col-sm-6 well">
+		<strong>Incoming</strong><br><br>
+		<span id="meatspace-incoming-total"></span><br>
+		total<br>
+		<br>
+		<span id="meatspace-incoming-uniques"></span><br>
+		uniques
+	</div>
+
+	<div class="col-sm-6 well">
+		<strong>Outgoing</strong><br><br>
+		<span id="meatspace-outgoing-total"></span><br>
+		total<br>
+		<br>
+		<span id="meatspace-outgoing-uniques"></span><br>
+		uniques
+	</div>
+
+	<br clear="all"><br>
+		
+	<a type="button" class="btn btn-default btn-small" ng-click="getMeat()" bs-button>refresh meat</a>
+</div>

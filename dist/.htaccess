@@ -1,0 +1,12 @@
+AddCharset utf-8 .js .json .css .html
+
+RewriteEngine On
+# if a request in the templates or json dirs is a 404, that's cool
+RewriteRule ^(partials|json)($|/) - [L]
+
+# if not an existing file or directory...
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# ...serve the index to any other requests (don't break on bad urls)
+RewriteRule ^(.*)$ /index.html
