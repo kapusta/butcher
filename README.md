@@ -45,6 +45,7 @@ Apache Version 2
 
 ### Changelog
 
+* 0.0.4 Incremental improvements.
 * 0.0.3 Added "participation" exampleware.
 * 0.0.2 White space clean up, added NavButtonsCtrl
 * 0.0.1 First release. This is just barely a thing.
