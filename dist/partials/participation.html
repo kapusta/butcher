@@ -1,19 +1,13 @@
 <div ng-controller="ParticipationStatsCtrl">
-  
-  <div class="col-sm-6 well">
-    <strong>International</strong><br><br>
-    
-    <div dk-circles id="int-prate" class="pull-left" circ-percentage="{{int.pRate}}" circ-width="12" circ-duration="400" circ-colors="#dddddd,#428bca"></div>
-    <div style="position: relative; left: 20px; top: 5px;">
-      posters: {{int.posters}}<br>
-      lurkers: {{int.lurkers}}<br>
-      <big><strong>% are participating</strong></big><br>
+  <div class="col-sm-6">
+    <strong><big>International</big></strong>
+    <div class="well">
+      <div style="display: inline-block;" dk-circles id="fadsfasdfa" circ-percentage="{{int.pRate}}" circ-width="12" circ-duration="400" circ-colors="#dddddd,#428bca"></div>
+      <div class="vlign" style="display: inline-block; text-align: right;">
+        {{int.posters}} posters<br>
+        {{int.lurkers}} lurkers<br>
+        <big><strong>% are participating</strong></big>
+      </div>
     </div>
-    
   </div>
-  
-  
-  <br clear="all">
-  
-  <a type="button" class="btn btn-default btn-small" ng-click="getMeat()" bs-button>refresh meat</a>
 </div>

@@ -1,12 +1,12 @@
 <div class="row" ng-controller="NavButtonsCtrl">
-  <a type="button" class="btn" ng-class="(!$routeParams.page) ? 'btn-primary' : ''" href="/" bs-button>
-    <i class="fa fa-home"></i> traffic
+  <a type="button" class="btn" ng-class="(!$routeParams.page || $routeParams.page == 'about') ? 'btn-primary' : ''" href="/about" bs-button>
+    <i class="fa fa-info-circle"></i> about
+  </a>
+  <a type="button" class="btn" ng-class="($routeParams.page == 'traffic') ? 'btn-primary' : ''" href="/traffic" bs-button>
+    <i class="fa fa-tachometer"></i> traffic
   </a>
   <a type="button" class="btn" ng-class="($routeParams.page == 'participation') ? 'btn-primary' : ''" href="/participation" bs-button>
-    <i class="fa fa-info-circle"></i> participation rates
-  </a>
-  <a type="button" class="btn" ng-class="($routeParams.page == 'about') ? 'btn-primary' : ''" href="/about" bs-button>
-    <i class="fa fa-info-circle"></i> about
+    <i class="fa fa-users"></i> participation
   </a>
 </div><!-- end row -->
 <br>

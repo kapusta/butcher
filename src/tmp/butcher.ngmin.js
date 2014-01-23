@@ -17,7 +17,7 @@
     function ($routeProvider, $locationProvider, $httpProvider) {
       $locationProvider.html5Mode(true);
       $httpProvider.interceptors.push('intercept');
-      $routeProvider.when(baseUrl, { templateUrl: baseUrl + 'partials/index.html' }).when(baseUrl + ':page', {
+      $routeProvider.when(baseUrl, { templateUrl: baseUrl + 'partials/about.html' }).when(baseUrl + ':page', {
         templateUrl: function (params) {
           return baseUrl + 'partials/' + params.page + '.html';
         }
@@ -135,7 +135,7 @@
       $scope.int = {};
       $scope.int.posters = 82;
       $scope.int.lurkers = 147;
-      $scope.int.pRate = ($scope.int.posters / ($scope.int.posters + $scope.int.lurkers) * 100).toFixed(1);
+      $scope.int.pRate = ($scope.int.posters / ($scope.int.posters + $scope.int.lurkers) * 100).toFixed(2);
     }
   ]);
 }(window.angular, window.jQuery));(function (angular, document) {

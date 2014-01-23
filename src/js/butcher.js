@@ -22,7 +22,7 @@
     // ROUTES /////////////////////////////////////////////////////////////////
     $routeProvider
     .when(baseUrl, { // BASE ROUTE
-      templateUrl: baseUrl + "partials/index.html",
+      templateUrl: baseUrl + "partials/about.html",
     })
     .when(baseUrl + ":page", {
       templateUrl: function(params){

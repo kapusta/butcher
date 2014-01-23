@@ -3,12 +3,13 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks("grunt-contrib-cssmin");
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-contrib-clean");
   grunt.loadNpmTasks("grunt-ngmin");
   
   // if you simply run "grunt" these default tasks will execute, IN THE ORDER THEY APPEAR!
-  grunt.registerTask('default', ["jshint", "clean", "ngmin", "uglify", "copy"]);
+  grunt.registerTask('default', ["jshint", "clean", "ngmin", "uglify", "cssmin", "copy"]);
   
   grunt.registerTask("reload", "reload Chrome on OS X", function() {
     require("child_process").exec("osascript " +
@@ -59,6 +60,16 @@ module.exports = function (grunt) {
         dest: '../src/tmp/butcher.ngmin.js'
       }
     },
+    
+    /* (dest : src) */
+    cssmin: {
+      compress: {
+        files: {
+          '../dist/css/butcher.min.css': ['../src/css/butcher.css']
+        }
+      }
+    },
+    
     
     copy: {
       partials: {
