@@ -1,1 +1,1 @@
-.vlign{position:relative;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+.vlign{position:relative;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}.axis line,.axis path{fill:none;stroke:#b6b6b6;shape-rendering:crispEdges}.tick text{fill:#999}g.journal.active{cursor:pointer}text.label{font-size:12px;font-weight:700;cursor:pointer}text.value{font-size:8px;font-weight:700}

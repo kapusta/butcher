@@ -1,5 +1,5 @@
 <div ng-controller="ParticipationStatsCtrl">
-  <div class="col-sm-6">
+  <div class="col-sm-5">
     <strong><big>International</big></strong>
     <div class="well">
       <div style="display: inline-block;" dk-circles id="fadsfasdfa" circ-percentage="{{int.pRate}}" circ-width="12" circ-duration="400" circ-colors="#dddddd,#428bca"></div>
@@ -10,4 +10,16 @@
       </div>
     </div>
   </div>
+  
+  <div class="col-sm-7">
+    <strong><big>Bubbles</big></strong>
+    <div class="well">
+      <div bbl-graph bbl-width="300" bbl-height="100" bbl-start-time="4"  bbl-end-time="12" bbl-data="bubbleData"></div>
+    </div>
+  </div>
+
+
+
+
+
 </div>
