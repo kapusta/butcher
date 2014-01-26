@@ -1,5 +1,4 @@
 (function(angular, d3, $) {
-  /* jshint validthis: true */
   "use strict"; // ECMA5 strict mode
   
   angular.module('butcher').directive("bblGraph", ['$log', function($log){
@@ -13,6 +12,7 @@
         
         var makeBubbles = function() {
           // Adapted from http://neuralengr.com/asifr/journals/journals_optogenetic.html
+          // which was likely adapted from http://bl.ocks.org/mbostock/3887118
           
           function truncate(str, maxLength, suffix) {
             if(str.length > maxLength) {
@@ -28,11 +28,9 @@
           var height = parseInt(attrs.bblHeight, 10);
           var start_time = parseInt(attrs.bblStartTime, 10);
           var end_time = parseInt(attrs.bblEndTime, 10);
-            
-          var c = d3.scale.category10();
           
+          var c = d3.scale.category10();
           var x = d3.scale.linear().range([0, width]).domain([start_time, end_time]);
-            
           var xAxis = d3.svg.axis().scale(x).orient("top");
             
           var svg = d3
@@ -44,12 +42,14 @@
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
             
           function mouseover() {
+            /* jshint validthis: true */
             var g = d3.select(this).node().parentNode;
             d3.select(g).selectAll("circle").style("display","none");
             d3.select(g).selectAll("text.value").style("display","block");
           }
           
           function mouseout() {
+            /* jshint validthis: true */
             var g = d3.select(this).node().parentNode;
             d3.select(g).selectAll("circle").style("display","block");
             d3.select(g).selectAll("text.value").style("display","none");
@@ -61,9 +61,9 @@
             
           svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + 0 + ")").call(xAxis);
           
-          $.each(scope.bblData, function(j, v) {
+          $.each(scope.bblData, function(i, v) {
             
-            var g = svg.append("g").attr("class","journal");
+            var g = svg.append("g");
             
             var circles = g.selectAll("circle")
               .data(v['counts'])
@@ -81,24 +81,24 @@
               
             circles
               .attr("cx", function(d, i) { return xScale(d[0]); })
-              .attr("cy", j*20+20)
+              .attr("cy", i*20+20)
               .attr("r", function(d) { return rScale(d[1]); })
-              .style("fill", function(d) { return c(j); });
+              .style("fill", function(d) { return c(i); });
               
             text
-              .attr("y", j*20+25)
+              .attr("y", i*20+25)
               .attr("x",function(d, i) { return xScale(d[0])-5; })
               .attr("class","value")
               .text(function(d){ return d[1]; })
-              .style("fill", function(d) { return c(j); })
+              .style("fill", function(d) { return c(i); })
               .style("display","none");
               
             g.append("text")
-              .attr("y", j*20+25)
+              .attr("y", i*20+25)
               .attr("x",width+20)
               .attr("class","label")
               .text(truncate(v['name'],30,"..."))
-              .style("fill", function(d) { return c(j); })
+              .style("fill", function(d) { return c(i); })
               .on("mouseover", mouseover)
               .on("mouseout", mouseout);
           });

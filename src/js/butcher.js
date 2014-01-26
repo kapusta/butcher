@@ -3,7 +3,7 @@
   
 	// These probably get moved out to a config file
   var baseUrl = "/";
-  var restUrl = "http://nodejsisata.co:8080";
+  var restUrl = "http://nodejsisata.co:1983";
   
   // A utility function for capitalizing string
   String.prototype.capitalize = function() {

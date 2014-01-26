@@ -1,7 +1,7 @@
 (function (angular) {
   'use strict';
   var baseUrl = '/';
-  var restUrl = 'http://nodejsisata.co:8080';
+  var restUrl = 'http://nodejsisata.co:1983';
   String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
   };
@@ -63,57 +63,7 @@
       });
     }
   ]);
-}(window.angular, document));(function (angular, $, document) {
-  'use strict';
-  angular.module('butcher').controller('CoreStatsCtrl', [
-    '$scope',
-    '$log',
-    '$timeout',
-    'meat',
-    function ($scope, $log, $timeout, meat) {
-      $log.log('CoreStatsCtrl is running.');
-      var pop_bar_data = function (data) {
-        var inc_totals = [];
-        var inc_uniques = [];
-        var out_totals = [];
-        var out_uniques = [];
-        for (var i = 0; i < 24; i++) {
-          if (data[i].topic === 'meatspace.incoming') {
-            inc_totals.push(data[i].total);
-            inc_uniques.push(data[i].uniques);
-          }
-          if (data[i].topic === 'meatspace.outgoing') {
-            out_totals.push(data[i].total);
-            out_uniques.push(data[i].uniques);
-          }
-        }
-        $('#meatspace-incoming-total').peity('bar', {
-          width: 200,
-          height: 50
-        }).text(inc_totals.join(',')).change();
-        $('#meatspace-incoming-uniques').peity('bar', {
-          width: 200,
-          height: 50
-        }).text(inc_uniques.join(',')).change();
-        $('#meatspace-outgoing-total').peity('bar', {
-          width: 200,
-          height: 50
-        }).text(out_totals.join(',')).change();
-        $('#meatspace-outgoing-uniques').peity('bar', {
-          width: 200,
-          height: 50
-        }).text(out_uniques.join(',')).change();
-      };
-      $scope.getMeat = function (refresh) {
-        meat.get($scope.restUrl + '/stats', false, true, function (obj) {
-          $scope.core_stats = obj.data;
-          pop_bar_data(obj.data);
-        });
-      };
-      $scope.getMeat();
-    }
-  ]);
-}(window.angular, window.jQuery));(function (angular, $) {
+}(window.angular, document));(function (angular, $) {
   'use strict';
   angular.module('butcher').controller('NavButtonsCtrl', [
     '$scope',
@@ -136,6 +86,21 @@
       $scope.int.posters = 82;
       $scope.int.lurkers = 147;
       $scope.int.pRate = ($scope.int.posters / ($scope.int.posters + $scope.int.lurkers) * 100).toFixed(2);
+      $scope.fr = {};
+      $scope.fr.posters = 32;
+      $scope.fr.lurkers = 87;
+      $scope.fr.pRate = ($scope.fr.posters / ($scope.fr.posters + $scope.fr.lurkers) * 100).toFixed(2);
+    }
+  ]);
+}(window.angular, window.jQuery));(function (angular, $, document) {
+  'use strict';
+  angular.module('butcher').controller('TrafficStatsCtrl', [
+    '$scope',
+    '$log',
+    '$timeout',
+    'meat',
+    function ($scope, $log, $timeout, meat) {
+      $log.log('TrafficStatsCtrl is running.');
       $scope.bubbleData = [
         {
           'counts': [
@@ -192,7 +157,7 @@
               100
             ]
           ],
-          'name': 'international'
+          'name': 'channel 1'
         },
         {
           'counts': [
@@ -217,7 +182,7 @@
               10
             ]
           ],
-          'name': 'french'
+          'name': 'channel 2'
         },
         {
           'counts': [
@@ -242,7 +207,7 @@
               11
             ]
           ],
-          'name': 'spanish'
+          'name': 'channel 3'
         }
       ];
     }
@@ -304,8 +269,8 @@
                 width
               ]);
             svg.append('g').attr('class', 'x axis').attr('transform', 'translate(0,' + 0 + ')').call(xAxis);
-            $.each(scope.bblData, function (j, v) {
-              var g = svg.append('g').attr('class', 'journal');
+            $.each(scope.bblData, function (i, v) {
+              var g = svg.append('g');
               var circles = g.selectAll('circle').data(v['counts']).enter().append('circle');
               var text = g.selectAll('text').data(v['counts']).enter().append('text');
               var rScale = d3.scale.linear().domain([
@@ -319,20 +284,20 @@
                 ]);
               circles.attr('cx', function (d, i) {
                 return xScale(d[0]);
-              }).attr('cy', j * 20 + 20).attr('r', function (d) {
+              }).attr('cy', i * 20 + 20).attr('r', function (d) {
                 return rScale(d[1]);
               }).style('fill', function (d) {
-                return c(j);
+                return c(i);
               });
-              text.attr('y', j * 20 + 25).attr('x', function (d, i) {
+              text.attr('y', i * 20 + 25).attr('x', function (d, i) {
                 return xScale(d[0]) - 5;
               }).attr('class', 'value').text(function (d) {
                 return d[1];
               }).style('fill', function (d) {
-                return c(j);
+                return c(i);
               }).style('display', 'none');
-              g.append('text').attr('y', j * 20 + 25).attr('x', width + 20).attr('class', 'label').text(truncate(v['name'], 30, '...')).style('fill', function (d) {
-                return c(j);
+              g.append('text').attr('y', i * 20 + 25).attr('x', width + 20).attr('class', 'label').text(truncate(v['name'], 30, '...')).style('fill', function (d) {
+                return c(i);
               }).on('mouseover', mouseover).on('mouseout', mouseout);
             });
           };

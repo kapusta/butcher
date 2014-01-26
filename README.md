@@ -17,11 +17,10 @@ GETs meatdata and gives it to you in a consumable format.
 
 ### To Do
 
-* Get more REST end points from Beardbro
-* Include a graphing lib (Piety for now, but maybe D3 later)
+* Add as many D3 based directives as possible.
+* Get more end points and better JSON from the REST API.
 * Make the UI look like something.
 * Trim the download size when it's all 200s
-* Graph some stuff
 
 ### nginx vs apache
 
@@ -45,6 +44,7 @@ Apache Version 2
 
 ### Changelog
 
+* 0.0.5 Removed Piety, added D3, added a D3 directive.
 * 0.0.4 Incremental improvements.
 * 0.0.3 Added "participation" exampleware.
 * 0.0.2 White space clean up, added NavButtonsCtrl

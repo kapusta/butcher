@@ -1,29 +1,18 @@
-<div ng-controller="CoreStatsCtrl">
+<div ng-controller="TrafficStatsCtrl">
   
-  <div class="col-sm-6">
-    <strong>Incoming</strong><br>
+  <div class="col-sm-8">
+    <strong><big>Uniques</big></strong>
     <div class="well">
-      <span id="meatspace-incoming-total"></span><br>
-      total<br>
-      <br>
-      <span id="meatspace-incoming-uniques"></span><br>
-      uniques
-    </div>
-  </div>
-  
-  <div class="col-sm-6">
-    <strong>Outgoing</strong><br>
-    <div class="well">
-      <span id="meatspace-outgoing-total"></span><br>
-      total<br>
-      <br>
-      <span id="meatspace-outgoing-uniques"></span><br>
-      uniques
+      Uniques over the last 12 hours...<br><br>
+      
+      <div bbl-graph bbl-width="400" bbl-height="100" bbl-start-time="1"  bbl-end-time="12" bbl-data="bubbleData"></div>
     </div>
   </div>
   
   
+  <!--
   <div class="col-sm-6">
     <a type="button" class="btn btn-default btn-small" ng-click="getMeat()" bs-button>refresh meat</a>
   </div>
+  -->
 </div>

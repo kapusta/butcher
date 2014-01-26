@@ -1,8 +1,11 @@
 <div ng-controller="ParticipationStatsCtrl">
+  
+  <!-- the first div here could be a ng-repeat for each channel in some JSON object -->
+  
   <div class="col-sm-5">
-    <strong><big>International</big></strong>
+    <strong><big>International Channel</big></strong>
     <div class="well">
-      <div style="display: inline-block;" dk-circles id="fadsfasdfa" circ-percentage="{{int.pRate}}" circ-width="12" circ-duration="400" circ-colors="#dddddd,#428bca"></div>
+      <div style="display: inline-block;" dk-circles id="International-Channel" circ-percentage="{{int.pRate}}" circ-width="12" circ-duration="400" circ-colors="#dddddd,#428bca"></div>
       <div class="vlign" style="display: inline-block; text-align: right;">
         {{int.posters}} posters<br>
         {{int.lurkers}} lurkers<br>
@@ -11,15 +14,17 @@
     </div>
   </div>
   
-  <div class="col-sm-7">
-    <strong><big>Bubbles</big></strong>
+  <div class="col-sm-5">
+    <strong><big>French Channel</big></strong>
     <div class="well">
-      <div bbl-graph bbl-width="300" bbl-height="100" bbl-start-time="4"  bbl-end-time="12" bbl-data="bubbleData"></div>
+      <div style="display: inline-block;" dk-circles id="French-Channel" circ-percentage="{{fr.pRate}}" circ-width="12" circ-duration="400" circ-colors="#dddddd,#428bca"></div>
+      <div class="vlign" style="display: inline-block; text-align: right;">
+        {{fr.posters}} posters<br>
+        {{fr.lurkers}} lurkers<br>
+        <big><strong>% are participating</strong></big>
+      </div>
     </div>
   </div>
-
-
-
-
+  
 
 </div>
