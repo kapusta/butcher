@@ -30,7 +30,6 @@ module.exports = function (grunt) {
       },
     },
     
-    
     clean: {
       options: {
         force: true, // danger will robinson!
@@ -39,11 +38,11 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '../dist/',
-          src: ['partials/*.html', 'js/*.js'],
+          src: ['partials/**', 'js/**', 'css/**'],
         }]
       }
     },
-
+    
     uglify: {
       options: {
         banner: '/* generated: <%= grunt.template.today("yyyy-mm-dd @ HH:MM:ss") %> */\n'
