@@ -8,22 +8,20 @@
 /* BEGIN styles for d3-bubbles directive */
 .axis path, .axis line {
   fill: none;
-  stroke:#b6b6b6;
+  stroke: #999;
   shape-rendering: crispEdges;
 }
 .tick text{
-  fill:#999;
-}
-g.journal.active{
-  cursor:pointer;
+  fill: #999;
 }
 text.label{
-  font-size:12px;
-  font-weight:bold;
-  cursor:pointer;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
 }
 text.value{
-  font-size:8px;
-  font-weight:bold;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
 }
 /* END styles for d3-bubbles directive */
