@@ -2,7 +2,7 @@ AddCharset utf-8 .js .json .css .html
 
 RewriteEngine On
 # if a request in the templates or json dirs is a 404, that's cool
-RewriteRule ^(partials|json)($|/) - [L]
+RewriteRule ^(partials|json|js)($|/) - [L]
 
 # if not an existing file or directory...
 RewriteCond %{REQUEST_FILENAME} !-f
