@@ -3,6 +3,8 @@ butcher
 
 GETs meatdata and gives it to you in a consumable format.
 
+Pull requests accepted.
+
 ### Get Started
 
 * Put the stuff in /dist/ at an Apache or Nginx docroot (point a virtual at /dist/ or whatever)
@@ -20,7 +22,7 @@ GETs meatdata and gives it to you in a consumable format.
 * Add as many D3 based directives as possible.
 * Get more end points and better JSON from the REST API.
 * Make the UI look like something.
-* Trim the download size when it's all 200s
+* Make a meat based favicon
 
 ### nginx vs apache
 
