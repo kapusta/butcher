@@ -97,6 +97,7 @@ module.exports = function (grunt) {
             flatten: true,
             src: [
               '../src/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+              '../src/bower_components/nvd3/nv.d3.min.js',
               '../src/bower_components/dkCircles/dk-circles.min.js'
             ],
             dest: '../dist/js/',
@@ -104,7 +105,19 @@ module.exports = function (grunt) {
           }
         ]
       },
-      
+      css: {
+        files: [
+          {
+            expand: true,
+            flatten: true,
+            src: [
+              '../src/bower_components/nvd3/nv.d3.min.css'
+            ],
+            dest: '../dist/css/',
+            filter: 'isFile'
+          }
+        ]
+      }
     },
     
     watch: {

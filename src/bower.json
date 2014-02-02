@@ -4,9 +4,11 @@
   "dependencies": {
     "angular-bootstrap": "~0.10.0",
     "dkCircles": "~0.0.2",
-    "angularjs-nvd3-directives": "~0.0.5-beta"
+    "angularjs-nvd3-directives": "~0.0.5-beta",
+    "nvd3": "~1.1.15-beta"
   },
   "resolutions": {
-    "d3": "3.3.11"
+    "d3": "~3.3.13",
+    "nvd3": "~1.1.15-beta"
   }
 }
