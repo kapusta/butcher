@@ -1,5 +1,5 @@
 // Proof of concept. PRs accepted.
-(function(angular, $, document){
+(function(angular){
   'use strict';
   
   angular.module('butcher').controller("TrafficStatsCtrl", function($scope, $log, $timeout, meat) {
@@ -66,4 +66,4 @@
     */
   });
 
-}(window.angular, window.jQuery));
+}(window.angular));

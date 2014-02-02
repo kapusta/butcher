@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "dependencies": {
     "angular-bootstrap": "~0.10.0",
-    "peity": "~2.0.0",
-    "dkCircles": "~0.0.2"
+    "dkCircles": "~0.0.2",
+    "angularjs-nvd3-directives": "~0.0.5-beta"
+  },
+  "resolutions": {
+    "d3": "3.3.11"
   }
 }

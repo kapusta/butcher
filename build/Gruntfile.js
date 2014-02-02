@@ -43,6 +43,17 @@ module.exports = function (grunt) {
       }
     },
     
+    ngmin: {
+      butcher: {
+        src: ['../src/js/butcher.js', '../src/js/**/*.js'],
+        dest: '../src/tmp/butcher.ngmin.js'
+      },
+      nvd3: {
+        src: ['../src/bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js'],
+        dest: '../src/tmp/angularjs-nvd3-directives.ngmin.js'
+      }
+    },
+    
     uglify: {
       options: {
         banner: '/* generated: <%= grunt.template.today("yyyy-mm-dd @ HH:MM:ss") %> */\n'
@@ -50,13 +61,10 @@ module.exports = function (grunt) {
       butcher: {
         src: ['../src/tmp/butcher.ngmin.js'],
         dest: '../dist/js/butcher.min.js'
-      }
-    },
-    
-    ngmin: {
-      butcher: {
-        src: ['../src/js/butcher.js', '../src/js/**/*.js'],
-        dest: '../src/tmp/butcher.ngmin.js'
+      },
+      nvd3: {
+        src: ['../src/tmp/angularjs-nvd3-directives.ngmin.js'],
+        dest: '../dist/js/angularjs-nvd3-directives.min.js'
       }
     },
     
@@ -89,7 +97,6 @@ module.exports = function (grunt) {
             flatten: true,
             src: [
               '../src/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-              '../src/bower_components/peity/jquery.peity.min.js',
               '../src/bower_components/dkCircles/dk-circles.min.js'
             ],
             dest: '../dist/js/',

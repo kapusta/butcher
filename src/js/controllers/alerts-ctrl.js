@@ -1,4 +1,4 @@
-(function(angular, document){
+(function(angular){
   'use strict';
   
   angular.module('butcher').controller("AlertsCtrl", function($scope, $rootScope, $log) {
@@ -25,4 +25,4 @@
     
   });
   
-}(window.angular, document));
+}(window.angular));

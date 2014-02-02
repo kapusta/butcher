@@ -1,4 +1,4 @@
-(function(angular, $){
+(function(angular){
   'use strict';
   
   angular.module('butcher').controller("ParticipationStatsCtrl", function($scope, $routeParams, $log) {
@@ -19,4 +19,4 @@
     
   });
 
-}(window.angular, window.jQuery));
+}(window.angular));
