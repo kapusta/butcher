@@ -19,8 +19,9 @@ Pull requests accepted.
 
 ### To Do
 
-* Add as many D3 based directives as possible.
+* Set up demoware for various NVD3.js directives.
 * Get more end points and better JSON from the REST API.
+* Design the URLs for the end points (eg, /:channelid/:stattype/:timeperiod)
 * Make the UI look like something.
 * Make a meat based favicon
 
