@@ -2,10 +2,10 @@
   
   <!-- the first div here could be a ng-repeat for each channel in some JSON object -->
   
-  <div class="col-sm-5">
-    <strong><big>International Channel</big></strong>
+  <div class="col-sm-6">
+    <strong><big>International Channel</big></strong><br>
     <div class="well">
-      <div style="display: inline-block;" dk-circles id="International-Channel" circ-percentage="{{int.pRate}}" circ-width="12" circ-duration="400" circ-colors="#dddddd,#428bca"></div>
+      <div style="display: inline-block; width: 105px;" dk-circles id="International-Channel" circ-percentage="{{int.pRate}}" circ-width="12" circ-duration="400" circ-colors="#dddddd,#428bca"></div>
       <div class="vlign" style="display: inline-block; text-align: right;">
         {{int.posters}} posters<br>
         {{int.lurkers}} lurkers<br>
@@ -14,10 +14,10 @@
     </div>
   </div>
   
-  <div class="col-sm-5">
-    <strong><big>French Channel</big></strong>
+  <div class="col-sm-6">
+    <strong><big>French Channel</big></strong><br>
     <div class="well">
-      <div style="display: inline-block;" dk-circles id="French-Channel" circ-percentage="{{fr.pRate}}" circ-width="12" circ-duration="400" circ-colors="#dddddd,#428bca"></div>
+      <div style="display: inline-block; width: 105px;" dk-circles id="French-Channel" circ-percentage="{{fr.pRate}}" circ-width="12" circ-duration="400" circ-colors="#dddddd,#428bca"></div>
       <div class="vlign" style="display: inline-block; text-align: right;">
         {{fr.posters}} posters<br>
         {{fr.lurkers}} lurkers<br>
