@@ -55,9 +55,6 @@ module.exports = function (grunt) {
     },
     
     uglify: {
-      options: {
-        banner: '/* generated: <%= grunt.template.today("yyyy-mm-dd @ HH:MM:ss") %> */\n'
-      },
       butcher: {
         src: ['../src/tmp/butcher.ngmin.js'],
         dest: '../dist/js/butcher.min.js'
