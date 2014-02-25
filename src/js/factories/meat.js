@@ -17,7 +17,7 @@
         'timeout': timeout
       })
       .then(
-        function(obj) { happy_meat(obj); }, // Success
+        function(obj) { happy_meat(obj); return(obj); }, // Success
         function(obj) { if(sad_meat) { sad_meat(obj); } } // Fails via intercept.js, but you can also send in a fail func
       );
     };
