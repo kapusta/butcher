@@ -6,10 +6,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-cssmin");
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-contrib-clean");
-  grunt.loadNpmTasks("grunt-ngmin");
+  grunt.loadNpmTasks("grunt-ng-annotate");
   
   // if you simply run "grunt" these default tasks will execute, IN THE ORDER THEY APPEAR!
-  grunt.registerTask('default', ["jshint", "clean", "ngmin", "uglify", "cssmin", "copy"]);
+  grunt.registerTask('default', ["jshint", "clean", "ngAnnotate", "uglify", "cssmin", "copy"]);
   
   grunt.registerTask("reload", "reload Chrome on OS X", function() {
     require("child_process").exec("osascript " +
@@ -43,24 +43,35 @@ module.exports = function (grunt) {
       }
     },
     
-    ngmin: {
+    // Migrated from ngMin to ngAnnotate -> https://github.com/btford/ngmin/issues/93
+    // https://github.com/mzgol/grunt-ng-annotate
+    ngAnnotate: {
+      options: {
+        add: true,
+        singleQuotes: true
+      },
+      
       butcher: {
-        src: ['../src/js/butcher.js', '../src/js/**/*.js'],
-        dest: '../src/tmp/butcher.ngmin.js'
+        files: {
+          '../src/tmp/butcher.annotated.js':
+          ['../src/js/butcher.js', '../src/js/**/*.js']
+        }
       },
       nvd3: {
-        src: ['../src/bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js'],
-        dest: '../src/tmp/angularjs-nvd3-directives.ngmin.js'
+        files: {
+          '../src/tmp/angularjs-nvd3-directives.annotated.js':
+          ['../src/bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js']
+        }
       }
     },
     
     uglify: {
       butcher: {
-        src: ['../src/tmp/butcher.ngmin.js'],
+        src: ['../src/tmp/butcher.annotated.js'],
         dest: '../dist/js/butcher.min.js'
       },
       nvd3: {
-        src: ['../src/tmp/angularjs-nvd3-directives.ngmin.js'],
+        src: ['../src/tmp/angularjs-nvd3-directives.annotated.js'],
         dest: '../dist/js/angularjs-nvd3-directives.min.js'
       }
     },
