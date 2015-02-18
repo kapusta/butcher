@@ -8,7 +8,7 @@
     var meat = {};
     var timeout = 60000; // timeout in milliseconds
     
-    meat.get = function(url, params, isArray, happy_meat, sad_meat) { // sad_meat is an optional function to execute if there was a failure
+    meat.get = function(url, params, isArray, successCallback, failureCallback) {
       return $http({ // return for the sake of the promise
         'method': 'GET',
         'url': url, // this can't have a query string on it
@@ -17,8 +17,22 @@
         'timeout': timeout
       })
       .then(
-        function(obj) { happy_meat(obj); return obj; }, // Success
-        function(obj) { if(sad_meat) { sad_meat(obj); return obj; } } // Fails via intercept.js, but you can also send in a fail func
+        // success
+        function(obj) { 
+          if (successCallback) {
+            return successCallback(obj);
+          } else {
+            return obj; 
+          }
+        },
+        // fail
+        function(obj) { 
+          if(failureCallback) { 
+            return failureCallback(obj);
+          } else {
+            return obj;
+          }
+        }
       );
     };
     
