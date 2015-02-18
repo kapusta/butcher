@@ -23,7 +23,6 @@
       return $q.reject(obj);
     };
     
-    
     i.response = function(obj) { // a succuesful response
       //$log.log("intercept: response");
       //$log.log(obj);
@@ -60,7 +59,6 @@
       //$log.log(obj); // this object is handed to $http and .then() fires with the object
       return $q.reject(obj);
     };
-    
     
     return i;
     
