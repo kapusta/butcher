@@ -47,6 +47,9 @@ Apache Version 2
 
 ### Changelog
 
+* 0.2.0 converted to ngAnnotate, updated $http meat wrapper
+* 0.1.1 return obj for chaining
+* 0.1.0 added nvd3js directives
 * 0.0.5 Removed Piety, added D3, added a D3 directive.
 * 0.0.4 Incremental improvements.
 * 0.0.3 Added "participation" exampleware.
