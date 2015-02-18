@@ -107,7 +107,6 @@
         };
         
         if (scope.bblData) {
-          $log.log(scope.bblData);
           makeBubbles();
         } else {  // If the percentage value isn't here yet (because ajax)
           scope.$watch(
