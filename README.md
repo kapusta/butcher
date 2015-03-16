@@ -12,7 +12,7 @@ Pull requests accepted.
 
 ### Developing
 
-* `cd src && bower install && cd build && npm install && grunt`
+* `cd src && bower install && cd ../build && npm install && grunt`
 * You just installed your dependencies and ran a build using Grunt.
 * Everything we need from the `src` directory was built and/or copied to `dist` which is where the UI lives. 
 * Point Apache/nginx/whatevs to that directory.
