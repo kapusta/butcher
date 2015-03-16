@@ -2,7 +2,7 @@
   'use strict';
   // Please see ./intercept.js for the functions that intercept these connections (outbound AND inbound). 
   
-  angular.module('butcher').factory('meat', ['$http', '$rootScope', '$log', function($http, $rootScope, $log) {
+  angular.module('butcher').factory('meat', ['$http', '$rootScope', '$log', '$q', function($http, $rootScope, $log, $q) {
     $log.log("meat factory is running");
     
     var meat = {};
@@ -30,7 +30,7 @@
           if(failureCallback) { 
             return failureCallback(obj);
           } else {
-            return obj;
+            $q.reject(obj);
           }
         }
       );
