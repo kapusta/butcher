@@ -47,6 +47,7 @@ Apache Version 2
 
 ### Changelog
 
+* 0.2.1 $q.reject(obj) in get()
 * 0.2.0 converted to ngAnnotate, updated $http meat wrapper
 * 0.1.1 return obj for chaining
 * 0.1.0 added nvd3js directives
