@@ -47,6 +47,7 @@ Apache Version 2
 
 ### Changelog
 
+* 0.3.0 migrate to http://krispo.github.io/angular-nvd3 and upgrade dk.circles
 * 0.2.2 return promise rejection, added fav icon
 * 0.2.1 $q.reject(obj) in get()
 * 0.2.0 converted to ngAnnotate, updated $http meat wrapper
