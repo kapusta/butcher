@@ -1,8 +1,79 @@
-(function(angular){
+(function(angular, d3){
   'use strict';
   
   angular.module('butcher').controller("Nvd3jsStatsCtrl", function($scope, $routeParams, $log) {
     $log.log("Nvd3jsStatsCtrl is running.");
+    
+    // https://raw.githubusercontent.com/krispo/angular-nvd3/gh-pages/js/lineChart.js
+    $scope.options = {
+      chart: {
+        type: 'lineChart',
+        height: 450,
+        margin: {
+          top: 20,
+          right: 20,
+          bottom: 130,
+          left: 80
+        },
+        x: function(d) {
+          return d[0];
+        },
+        y: function(d) {
+          return d[1];
+        },
+        useInteractiveGuideline: true,
+        dispatch: {
+          stateChange: function(e) {
+            console.log("stateChange");
+          },
+          changeState: function(e) {
+            console.log("changeState");
+          },
+          tooltipShow: function(e) {
+            console.log("tooltipShow");
+          },
+          tooltipHide: function(e) {
+            console.log("tooltipHide");
+          }
+        },
+        xAxis: {
+          axisLabel: 'X AXIS VALUE'
+        },
+        yAxis: {
+          axisLabel: 'Y AXIS VALUE',
+          tickFormat: function(d) {
+            return d3.format('.02f')(d);
+          },
+          axisLabelDistance: 10
+        },
+        callback: function(chart) {
+          console.log("!!! lineChart callback !!!");
+        }
+      },
+      title: {
+        enable: false,
+        text: 'sample chart title'
+      },
+      subtitle: {
+        enable: false,
+        text: 'sample subtitle',
+        css: {
+          'text-align': 'center',
+          'margin': '10px 13px 0px 7px'
+        }
+      },
+      caption: {
+        enable: false,
+        html: 'some html',
+        css: {
+          'text-align': 'justify',
+          'margin': '10px 13px 0px 7px'
+        }
+      }
+    };
+    
+    
+    
     
     $scope.exampleData = [
       {
@@ -19,4 +90,4 @@
     
   });
   
-}(window.angular));
+}(window.angular, window.d3));

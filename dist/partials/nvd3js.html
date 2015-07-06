@@ -1,19 +1,13 @@
 <div ng-controller="Nvd3jsStatsCtrl">
   
   <div class="col-sm-12">
-    <strong><big>Sample line chart using <a href="https://github.com/cmaurer/angularjs-nvd3-directives" target="_blank">nvd3</a></big></strong>
+    <strong><big>Sample line chart using <a href="https://github.com/krispo/angular-nvd3" target="_blank">nvd3</a></big></strong>
     <div class="well" style="height: 400px;">
-      <nvd3-line-chart
+      <nvd3
+        options="options"
         data="exampleData"
-        id="participationrate"
-        width="700"
-        height="350"
-        showXAxis="false"
-        showYAxis="true"
-        tooltips="true"
-        isArea="false"
-        showLegend="true">
-    </nvd3-line-chart>
+      >
+      </nvd3>
     </div>
   </div>
   

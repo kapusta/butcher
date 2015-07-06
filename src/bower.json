@@ -2,14 +2,16 @@
   "name": "butcher",
   "version": "0.0.1",
   "dependencies": {
-    "angular-bootstrap": "~0.10.0",
-    "dkCircles": "~0.0.2",
-    "angularjs-nvd3-directives": "~0.0.5-beta",
-    "nvd3": "~1.1.15-beta",
-    "favico.js": "~0.3.7"
+    "angular-bootstrap": "~0.13.0",
+    "dkCircles": "~1.0.1",
+    "nvd3": "~1.8.1",
+    "favico.js": "~0.3.7",
+    "d3": "~3.5.6",
+    "angular-nvd3": "1.0.0-rc.2"
   },
   "resolutions": {
-    "d3": "~3.3.13",
-    "nvd3": "~1.1.15-beta"
+    "d3": "~3.5.6",
+    "nvd3": "~1.8.1",
+    "angular-nvd3": "1.0.0-rc.2"
   }
 }

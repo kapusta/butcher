@@ -50,17 +50,10 @@ module.exports = function (grunt) {
         add: true,
         singleQuotes: true
       },
-      
       butcher: {
         files: {
           '../src/tmp/butcher.annotated.js':
           ['../src/js/butcher.js', '../src/js/**/*.js']
-        }
-      },
-      nvd3: {
-        files: {
-          '../src/tmp/angularjs-nvd3-directives.annotated.js':
-          ['../src/bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js']
         }
       }
     },
@@ -69,10 +62,6 @@ module.exports = function (grunt) {
       butcher: {
         src: ['../src/tmp/butcher.annotated.js'],
         dest: '../dist/js/butcher.min.js'
-      },
-      nvd3: {
-        src: ['../src/tmp/angularjs-nvd3-directives.annotated.js'],
-        dest: '../dist/js/angularjs-nvd3-directives.min.js'
       }
     },
     
@@ -105,7 +94,9 @@ module.exports = function (grunt) {
             flatten: true,
             src: [
               '../src/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-              '../src/bower_components/nvd3/nv.d3.min.js',
+              '../src/bower_components/nvd3/build/nv.d3.min.js',
+              '../src/bower_components/d3/d3.min.js',
+              '../src/bower_components/angular-nvd3/dist/angular-nvd3.min.js',
               '../src/bower_components/dkCircles/dk-circles.min.js'
             ],
             dest: '../dist/js/',
@@ -119,7 +110,7 @@ module.exports = function (grunt) {
             expand: true,
             flatten: true,
             src: [
-              '../src/bower_components/nvd3/nv.d3.min.css'
+              '../src/bower_components/nvd3/build/nv.d3.min.css'
             ],
             dest: '../dist/css/',
             filter: 'isFile'

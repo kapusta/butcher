@@ -25,3 +25,8 @@ text.value{
   text-align: center;
 }
 /* END styles for d3-bubbles directive */
+
+/* dk.circles styles */
+.circles-text {
+  left: -2px !important;
+}
